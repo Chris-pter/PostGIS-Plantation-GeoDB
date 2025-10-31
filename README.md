@@ -1,5 +1,6 @@
 # Plantation-PostGIS-Geodatabase
-A centralized PostGIS geodatabase designed for plantation spatial data storage and OLTP workflows, supporting efficient management of planted areas, infrastructure, and natural resources
+This repository documents the development of an **enterprise geodatabase** for managing 12 oil palm estates (~50,000 ha total) located in Sarawak (Miri and Bintulu regions).
+The project was built in **PostgresSQL/PostGIS**, following standardized naming conventions, schema design, andcontrolled access for collaborative GIS workflows.
 
 ## Overview
 
