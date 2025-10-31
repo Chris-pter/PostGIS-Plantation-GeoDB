@@ -17,7 +17,7 @@ Additional datasets (e.g., `palm_stand`, `road`, `building`) will be ingested pr
 
 ## Database Architecture
 ```
-estate_db (PostgreSQL Database)
+estate_db
 │
 ├── estate_1 (Schema)
 │   ├── boundary
@@ -28,7 +28,7 @@ estate_db (PostgreSQL Database)
 ├── ... (Other 11 estate schemas)
 │
 └── master (Schema)
-    ├── vw_block_all         ← OLAP-style combined block view  
+    ├── sql_view_block_all  
     └── other analytical views
 ```
 ### Data Management Design
