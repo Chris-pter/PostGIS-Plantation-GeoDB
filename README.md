@@ -18,23 +18,32 @@ Additional datasets (e.g., `palm_stand`, `road`, `building`, `ramp`) will be ing
 
 estate_db (PostgreSQL Database)
 │
-├── estate_1 (Schema)-<estatename>_estate (e.g., jawa_estate)
+├── samarakan (Schema)
 │   ├── boundary
 │   ├── division
 │   ├── section
 │   └── block
 │
-├── estate_2 (Schema)
+├── beluru (Schema)
 │   ├── boundary
 │   ├── division
 │   ├── section
 │   └── block
 │
-├── ... (Other 10 estate schemas)
+├── drian (Schema)
+│   ├── boundary
+│   ├── division
+│   ├── section
+│   └── block
+│
+├── ... (Other 9 estate schemas)
 │
 └── master (Schema)
     ├── vw_block_all         ← OLAP-style combined block view  
+    ├── vw_section_all       ← Combined section view  
+    ├── vw_flightplan        ← Combined flight area view  
     └── other analytical views
+
 
 
     
