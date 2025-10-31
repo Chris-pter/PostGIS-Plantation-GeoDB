@@ -14,34 +14,20 @@ Master Schema: master-consolidate data from all estate schemas for regional anal
 
 Additional datasets (e.g., `palm_stand`, `road`, `building`, `ramp`) will be ingested progressively
 
-##Database architecture
+## Database architecture
 ```
 estate_db (PostgreSQL Database)
 │
-├── samarakan (Schema)
+├── estate_1 (Schema)
 │   ├── boundary
 │   ├── division
 │   ├── section
 │   └── block
 │
-├── beluru (Schema)
-│   ├── boundary
-│   ├── division
-│   ├── section
-│   └── block
-│
-├── drian (Schema)
-│   ├── boundary
-│   ├── division
-│   ├── section
-│   └── block
-│
-├── ... (Other 9 estate schemas)
+├── ... (Other 11 estate schemas)
 │
 └── master (Schema)
     ├── vw_block_all         ← OLAP-style combined block view  
-    ├── vw_section_all       ← Combined section view  
-    ├── vw_flightplan        ← Combined flight area view  
     └── other analytical views
 
 
