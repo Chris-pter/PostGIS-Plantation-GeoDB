@@ -12,7 +12,7 @@ Each estate schema contains four core spatial layers:
 - `block` -smallest management unit (field/planting area)
 Master Schema: master-consolidate data from all estate schemas for regional analysis
 
-Additional datasets (e.g., `palm_stand`, `road`, `building`, `ramp`) will be ingested progressively
+Additional datasets (e.g., `palm_stand`, `road`, `building`) will be ingested progressively
 
 ## Database architecture
 ```
@@ -29,7 +29,11 @@ estate_db (PostgreSQL Database)
 └── master (Schema)
     ├── vw_block_all         ← OLAP-style combined block view  
     └── other analytical views
-
+```
+### Data Management Design
+OLTP & OLAP Use:
+* OLTP(Operational): Used at the estate schema level for updates, edits and version control.
+* OLAP (Analytical): Implemented in the master schema via SQL views for multi-estate/stakeholder overview.
 
 
     
