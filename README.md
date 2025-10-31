@@ -79,7 +79,7 @@ section  (1) ──< block   (many)
 block    (1) ──< palm_stand (many) [planned]
 ```
 
-## Problem Statements: Why This Geodatabase Was developed
+## Problem Statement: Why This Geodatabase Was developed
 Previously, spatial data for estate management has traditionally been handled using **GeoPackage (.gpkg)** files e.g.-division.gpkg, section.gpkg.
 Each .gpkg file contained consolidated spatial layers for every estate, a convienient "plug-and-play" solution that we could copy and use in QGIS.
 
