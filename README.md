@@ -44,7 +44,7 @@ OLTP & OLAP Use:
 * OLAP (Analytical): Implemented in the master schema via SQL views for multi-estate/stakeholder overview.
 
 ## Geodatabase ERD Design
-<img src=''>
+<img src='/docs/cross estate_master schema ERD.jpg'>
 
 ## Data Ingestion Workflow
 1. **Source Data**: Geopackage (.gpkg) from field mapping/drone data/surveys.
@@ -86,7 +86,8 @@ section  (1) ──< block   (many)
 block    (1) ──< palm_stand (many) [planned]
 ```
 
-## Problem Statement: Why This Geodatabase Was Developed
+## Problem Statement
+### Why This Geodatabase Was Developed
 Previously, spatial data for estate management has traditionally been handled using **GeoPackage (.gpkg)** files e.g.-division.gpkg, section.gpkg.
 Each .gpkg file contained consolidated spatial layers for every estate, a convienient "plug-and-play" solution that we could copy and use in QGIS.
 
