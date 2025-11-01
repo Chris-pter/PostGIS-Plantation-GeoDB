@@ -46,6 +46,8 @@ OLTP & OLAP Use:
 ## Geodatabase ERD Design
 <img src='/docs/cross estate_master schema ERD.jpg'>
 
+---
+
 ## Data Ingestion Workflow
 1. **Source Data**: Geopackage (.gpkg) from field mapping/drone data/surveys.
 2. **Standardization** : Unified column names, data types, and SRID.
