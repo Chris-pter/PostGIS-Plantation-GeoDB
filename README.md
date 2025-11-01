@@ -15,6 +15,13 @@ Each estate schema contains four core spatial layers:
 
 Additional datasets (e.g., `palm_stand`, `road`, `building`) will be ingested progressively
 
+## Tools & Technology Used
+* **PostgreSQL 16.4 + PostGIS 3**- Spatial database engine
+*  **QGIS 3.44.3** -visualization, data transformation and data ingestion
+*  **pgAdmin 4** Database management GUI
+*  **Draw.io**-ERD design & schema sketching
+*  **GitHub**-project documentation and version tracking
+
 ## Database Architecture
 ```
 estate_db
