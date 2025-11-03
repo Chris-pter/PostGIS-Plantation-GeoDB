@@ -1,6 +1,8 @@
 # Plantation-PostGIS-Geodatabase
+<p align=justify>
 This repository documents the development of an **enterprise geodatabase** for managing 12 oil palm estates (~50,000 ha total) located in Sarawak (Miri and Bintulu regions).
 The project was built in **PostgresSQL/PostGIS**, following standardized naming conventions, schema design, and controlled access for collaborative GIS workflows.
+</p>
 
 ## Project Structure Overview
 
@@ -20,7 +22,14 @@ Additional datasets (e.g., `palm_stand`, `road`, `building`) will be ingested pr
 *  **QGIS 3.44.3** -visualization, data transformation and data ingestion
 *  **pgAdmin 4** Database management GUI
 *  **Draw.io**-ERD design & schema sketching
-*  **GitHub**-project documentation and version tracking
+*  **GitHub**-project documentation
+
+## Geodatabase ERD Design
+<p align=center>
+<img src='/docs/cross estate_master schema ERD.jpg' width="900">
+</p>
+
+---
 
 ## Database Architecture
 ```
@@ -38,22 +47,30 @@ estate_db
     ├── sql_view_block_all  
     └── other analytical views
 ```
-### Data Management Design
-OLTP & OLAP Use:
-* OLTP (Operational): Used at the estate schema level for updates, edits and version control.
-* OLAP (Analytical): Implemented in the master schema via SQL views for multi-estate/stakeholder overview.
-
-## Geodatabase ERD Design
-<img src='/docs/cross estate_master schema ERD.jpg'>
 
 ---
 
 ## Data Ingestion Workflow
+
+<p align=center>
+<img src='/docs/Data Ingestion Workflow.jpg' width="900">
+</p>
+
+
 1. **Source Data**: Geopackage (.gpkg) from field mapping/drone data/surveys.
 2. **Standardization** : Unified column names, data types, and SRID.
 3. **Validation**: Check geometry types, validity, and spatial integrity.
 4. **Ingestion**: Imported via **QGIS**-"Export to PostgresSQL" tool.
 5. **Storage**: Each estate → its own schema; SRID EPSG:32650 (UTM Zone 50N) / EPSG:32649 (UTM Zone 49N).
+
+---
+
+### Data Management Design
+OLTP & OLAP Use:
+* OLTP (Operational): Used at the estate schema level for updates, edits and version control.
+* OLAP (Analytical): Implemented in the master schema via SQL views for multi-estate/stakeholder overview.
+
+---
 
 <details>
 <summary>Click to Expand: QGIS Pre-Ingestion Rules</summary>
@@ -70,6 +87,7 @@ Before importing data into PostGIS, the following standardization steps were app
 3. **Coordinate reference system**  
    - All data projected to **EPSG:32650 (WGS 84 / UTM Zone 50N) / EPSG:32649 (WGS 84 / UTM Zone 49N)**.
 </details>
+
 
 ### Naming Conventions
 General Rules
