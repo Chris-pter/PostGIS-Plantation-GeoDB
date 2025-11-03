@@ -84,7 +84,7 @@ OLTP & OLAP Use:
 * OLAP (Analytical): This central schema serves as the **Online Analytical Processing** environment. It contains no physical tables of its own, relying instead on read-only **SQL Views** that aggregate data from all
   12 operational schemas. This provides a single, secure source for multi-estate reporting and spatial analysis.
 
-  e.g.,-Query the total planting area of the entire compan instantly and accurately, without opening 12 files.
+  e.g.,-Query the total planting area of the entire estates instantly and accurately, without opening 12 files.
   ```
   Reporting/Aggregation
           SELECT SUM(ST_AREA(geom)/10000) AS
