@@ -24,14 +24,19 @@ Additional datasets (e.g., `palm_stand`, `road`, `building`) will be ingested pr
 *  **Draw.io**-ERD design & schema sketching
 *  **GitHub**-project documentation
 
-## Geodatabase ERD Design
+## Geodatabase Design & Modeling
 <p align=center>
 <img src='/docs/cross estate_master schema ERD.jpg' width="900">
 </p>
 
+<p align=center>
+<img src='/docs/.jpg' width="900">
+</p>
+
+
 ---
 
-## Database Architecture
+## Database Architecture & Schema Structure
 ```
 estate_db
 │
