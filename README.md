@@ -27,14 +27,12 @@ Additional datasets (e.g., `palm_stand`, `road`, `building`) will be ingested pr
 ## Geodatabase Design & Modeling
 
 ### Hierarchical Plantation Schema
-**Description:** This model enforces a strictly hierarchical structure, following the plantation's administrative organization (Boundary, Division, Section, Block).
-One-to-many (1:N) Foreign key constraints are used to link lower-level units to their unique parent, ensuring high data integrity (normalization) for core administrative layers.
 <p align=center>
 <img src='/docs/ERD Geodatabase.jpg' width=600>
 </p>
 
-### Foreign Key Constraints and Relationships
-Each schema follows a top-down hierarchical model, where each layer is linked through unique IDs and foreign key constraints to ensure referential integrity.
+**Description:** This model enforces a strictly hierarchical structure, following the plantation's administrative organization (Boundary, Division, Section, Block).
+One-to-many (1:N) Foreign key constraints are used to link lower-level units to their unique parent, ensuring high data integrity (normalization) for core administrative layers.
 
 #### Entity Relationships
 ```
@@ -47,11 +45,12 @@ block    (1) ──< palm_stand (many) [planned]
 ##
 
 ### Cross-Estate Master View Architecture
-**Description:** This model illustrates the consolidation model used for wide reporting. The central master schema aggregates data from all 12 operational estates schemas using read-only **SQL View***.
-These views uses the **UNION ALL** operation to seamlessly combine identical tables, providing a single, unified dataset fast/wide analysis without duplicating the underlying operational data.
 <p align=center>
 <img src='/docs/cross estate_master schema ERD.jpg' width="900">
 </p>
+
+**Description:** This model illustrates the consolidation model used for wide reporting. The central master schema aggregates data from all 12 operational estates schemas using read-only **SQL View***.
+These views uses the **UNION ALL** operation to seamlessly combine identical tables, providing a single, unified dataset fast/wide analysis without duplicating the underlying operational data.
 
 ---
 
@@ -60,7 +59,7 @@ These views uses the **UNION ALL** operation to seamlessly combine identical tab
 The database is implemented using a multi-schema, two tier architecture to achieve strict seperation between operational data integrity and centralized analytical reporting. The central database (`estate_db`) is
 logically divided into 13 schemas: 12 individual estate schemas for daily operations and one dedicated master schema for wide analysis/fast map production.
 
-##
+
 ```
 estate_db
 │
@@ -76,7 +75,6 @@ estate_db
     ├── sql_view_block_all  
     └── other analytical views
 ```
-##
 
 ### Data Management Design
 OLTP & OLAP Use:
