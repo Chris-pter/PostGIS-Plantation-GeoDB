@@ -20,23 +20,36 @@ Additional datasets (e.g., `palm_stand`, `road`, `building`) will be ingested pr
 ## Tools & Technology Used
 * **PostgreSQL 16.4 + PostGIS 3**- Spatial database engine
 *  **QGIS 3.44.3** -visualization, data transformation and data ingestion
-*  **pgAdmin 4** Database management GUI
-*  **Draw.io**-ERD design & schema sketching
-*  **GitHub**-project documentation
+*  **pgAdmin 4** -Database management GUI
+*  **Draw.io** -ERD design & schema sketching
+*  **GitHub** -project documentation
 
 ## Geodatabase Design & Modeling
+
+### Hierarchical Plantation Schema
+**Description:** This model enforces a strictly hierarchical structure, following the plantation's administrative organization (Boundary, Division, Section, Block).
+One-to-many (1:N) Foreign key constraints are used to link lower-level units to their unique parent, ensuring high data integrity (normalization) for core administrative layers.
+<p align=center>
+<img src='/docs/ERD Geodatabase.jpg' width=600>
+</p>
+
+##
+
+### Cross-Estate Master View Architecture
+**Description:** This model illustrates the consolidation model used for wide reporting. The central master schema aggregates data from all 12 operational estates schemas using read-only **SQL View***.
+These views uses the **UNION ALL** operation to seamlessly combine identical tables, providing a single, unified dataset fast/wide analysis without duplicating the underlying operational data.
 <p align=center>
 <img src='/docs/cross estate_master schema ERD.jpg' width="900">
 </p>
 
-<p align=center>
-<img src='/docs/.jpg' width="900">
-</p>
-
-
 ---
 
 ## Database Architecture & Schema Structure
+
+The database is implemented using a multi-schema, two tier architecture to achieve strict seperation between operational data integrity and centralized analytical reporting. The central database (`estate_db`) is
+logically divided into 13 schemas: 12 individual estate schemas for daily operations and one dedicated master schema for wide analysis/fast map production.
+
+##
 ```
 estate_db
 │
@@ -52,7 +65,21 @@ estate_db
     ├── sql_view_block_all  
     └── other analytical views
 ```
+##
 
+### Data Management Design
+OLTP & OLAP Use:
+* OLTP (Operational): These 12 schemas function as the **Online Transaction Processing** environment. They hold definitive, authoritative data for each estate, enabling local edits, updates, and version control.
+* OLAP (Analytical): This central schema serves as the **Online Analytical Processing** environment. It contains no physical tables of its own, relying instead on read-only **SQL Views** that aggregate data from all
+  12 operational schemas. This provides a single, secure source for multi-estate reporting and spatial analysis.
+
+  e.g.,-Query the total planting area of the entire compan instantly and accurately, without opening 12 files.
+  ```
+  Reporting/Aggregation
+          SELECT SUM(ST_AREA(geom)/10000) AS
+          total_ha FROM
+          master.sql_view_block_all;
+    ```
 ---
 
 ## Data Ingestion Workflow
@@ -67,13 +94,6 @@ estate_db
 3. **Validation**: Check geometry types, validity, and spatial integrity.
 4. **Ingestion**: Imported via **QGIS**-"Export to PostgresSQL" tool.
 5. **Storage**: Each estate → its own schema; SRID EPSG:32650 (UTM Zone 50N) / EPSG:32649 (UTM Zone 49N).
-
----
-
-### Data Management Design
-OLTP & OLAP Use:
-* OLTP (Operational): Used at the estate schema level for updates, edits and version control.
-* OLAP (Analytical): Implemented in the master schema via SQL views for multi-estate/stakeholder overview.
 
 ---
 
