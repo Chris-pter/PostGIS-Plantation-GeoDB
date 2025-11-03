@@ -33,6 +33,17 @@ One-to-many (1:N) Foreign key constraints are used to link lower-level units to 
 <img src='/docs/ERD Geodatabase.jpg' width=600>
 </p>
 
+### Foreign Key Constraints and Relationships
+Each schema follows a top-down hierarchical model, where each layer is linked through unique IDs and foreign key constraints to ensure referential integrity.
+
+#### Entity Relationships
+```
+boundary (1) ──< division (many)
+division (1) ──< section (many)
+section  (1) ──< block   (many)
+block    (1) ──< palm_stand (many) [planned]
+```
+
 ##
 
 ### Cross-Estate Master View Architecture
@@ -119,17 +130,6 @@ General Rules
 * Use **snake_case** (lowercase, underscores).
 * Avoid spaces, uppercase letters, or special characters.
 * Keep names short, clear, and descriptive
-
-## Foreign Key Constraints and Relationships
-Each schema follows a top-down hierarchical model, where each layer is linked through unique IDs and foreign key constraints to ensure referential integrity.
-
-### Entity Relationships
-```
-boundary (1) ──< division (many)
-division (1) ──< section (many)
-section  (1) ──< block   (many)
-block    (1) ──< palm_stand (many) [planned]
-```
 
 ## Problem Statement
 ### Why This Geodatabase Was Developed
