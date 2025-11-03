@@ -4,6 +4,8 @@ This repository documents the development of an **enterprise geodatabase** for m
 The project was built in **PostgresSQL/PostGIS**, following standardized naming conventions, schema design, and controlled access for collaborative GIS workflows.
 </p>
 
+As an aspiring Geodata Engineer, this project demonstrates my practical learning in spatial database modeling, ETL pipeline design, and implementing data governance within PostGIS.
+
 ## Project Structure Overview
 
 The company manages **12 estates** each represented as a **separate schema** within central database called (`estate_db`).
