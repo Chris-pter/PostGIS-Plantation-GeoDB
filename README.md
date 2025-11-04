@@ -58,7 +58,7 @@ These views uses the **UNION ALL** operation to seamlessly combine identical tab
 
 ## Database Architecture & Schema Structure
 
-The database is implemented using a multi-schema, two tier architecture to achieve strict seperation between operational data integrity and centralized analytical reporting. The central database (`estate_db`) is
+The database is implemented using a multi-schema, two tier architecture to achieve strict separation between operational data integrity and centralized analytical reporting. The central database (`estate_db`) is
 logically divided into 13 schemas: 12 individual estate schemas for daily operations and one dedicated master schema for wide analysis/fast map production.
 
 
