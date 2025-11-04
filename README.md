@@ -103,38 +103,18 @@ OLTP & OLAP Use:
 This project applies a geospatial ETL pipeline to migrate raw estate mapping datasets into a unified PostGIS enterprise database structure.
 
 **Extract**
+* Raw data input from `.gpkg`, `.shp`, `.csv`, drone mapping outputs, and survey sources.
 
-The process begins by Extracting raw data from various Data Sources.
-**Inputs:** The system is designed to handle multiple geospatial and related data formats:
-* Drone Imagery
-* GeoPackage (.gpkg)
-* Shapefile (.shp)
-* CSV file
-* Other data sources
-* **Source Data:** A primary focus is data such as .gpkg files from field mapping, drone data, and surveys.
-    
 **Transform**
+* Standardize field names (snake_case) and data types.
+* Normalize SRID to **EPSG:32650/32649**.
+* Validate geometry integrity and remove non-standard columns.
 
-The extracted data undergoes crucial transformation steps  to ensure uniformity and quality.
-- **Standardization**
-  * Unified Columns: Standardizing field names (snake_case) and aligning data types.
-  * SRID Normalization: Standardizing the **Spatial Reference Identifier (SRID)**, typically to **EPSG:32649 (UTM Zone 49N)** orEPSG:32650 (UTM Zone 50N), to ensure all data aligns spatially.
-
-- **Validation**
-  * Geometry Checks: Verifying **geometry types** and **validity**.
-  * Spatial Integrity: Ensuring the geometries are topologically correct.
-  * Data Integrity: Checking data validity and removing estate-specific "extra" fields to align the attribute schema across all estates.
-
-    
 **Load**
+* Ingest cleaned layers into the respective estate schemas via QGIS *Export to PostgreSQL*.
+* Master schema then generates **SQL View** for cross-estate reporting.
 
-The cleaned and transformed data is then loaded into the final database structure.
-- **Ingestion**
-  * Tooling: Data is primarily imported using QGIS via its **"Export to PostgresSQL" Tool.**
-
-- **Storage**
-  * Structure: Data is organized by estate, with each estate assigned its own schema.
-  * Spatial Reference: The schema is tied to the normalized SRIDs: EPSG:32650 or EPSG:32649. This ensures data from each estate is correctly referenced within the database.
+This ETL framework ensures consistent structure, spatial integrity, and Single Source of Truth (SSOT) across all 12 estates.
 
 ---
 
