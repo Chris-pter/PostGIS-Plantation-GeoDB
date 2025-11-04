@@ -99,12 +99,42 @@ OLTP & OLAP Use:
 <img src='/docs/Data Ingestion Workflow.jpg' width="900">
 </p>
 
+### ETL Workflow
+This project applies a geospatial ETL pipeline to migrate raw estate mapping datasets into a unified PostGIS enterprise database structure.
 
-1. **Source Data**: Geopackage (.gpkg) from field mapping/drone data/surveys.
-2. **Standardization** : Unified column names, data types, and SRID.
-3. **Validation**: Check geometry types, validity, and spatial integrity.
-4. **Ingestion**: Imported via **QGIS**-"Export to PostgresSQL" tool.
-5. **Storage**: Each estate → its own schema; SRID EPSG:32650 (UTM Zone 50N) / EPSG:32649 (UTM Zone 49N).
+**Extract**
+
+The process begins by Extracting raw data from various Data Sources.
+**Inputs:** The system is designed to handle multiple geospatial and related data formats:
+* Drone Imagery
+* GeoPackage (.gpkg)
+* Shapefile (.shp)
+* CSV file
+* Other data sources
+* **Source Data:** A primary focus is data such as .gpkg files from field mapping, drone data, and surveys.
+    
+**Transform**
+
+The extracted data undergoes crucial transformation steps  to ensure uniformity and quality.
+- **Standardization**
+  * Unified Columns: Standardizing field names (snake_case) and aligning data types.
+  * SRID Normalization: Standardizing the **Spatial Reference Identifier (SRID)**, typically to **EPSG:32649 (UTM Zone 49N)** orEPSG:32650 (UTM Zone 50N), to ensure all data aligns spatially.
+
+- **Validation**
+  * Geometry Checks: Verifying **geometry types** and **validity**.
+  * Spatial Integrity: Ensuring the geometries are topologically correct.
+  * Data Integrity: Checking data validity and removing estate-specific "extra" fields to align the attribute schema across all estates.
+
+    
+**Load**
+
+The cleaned and transformed data is then loaded into the final database structure.
+- **Ingestion**
+  * Tooling: Data is primarily imported using QGIS via its **"Export to PostgresSQL" Tool.**
+
+- **Storage**
+  * Structure: Data is organized by estate, with each estate assigned its own schema.
+  * Spatial Reference: The schema is tied to the normalized SRIDs: EPSG:32650 or EPSG:32649. This ensures data from each estate is correctly referenced within the database.
 
 ---
 
