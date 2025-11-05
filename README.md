@@ -51,7 +51,7 @@ block    (1) ──< palm_stand (many) [planned]
 <img src='/docs/cross estate_master schema ERD.jpg' width="900">
 </p>
 
-**Description:** This model illustrates the consolidation model used for wide reporting. The central master schema aggregates data from all 12 operational estates schemas using read-only **SQL View***.
+**Description:** This model illustrates the consolidation model used for wide reporting. The central master schema aggregates data from all 12 operational estates schemas using read-only **SQL Views**.
 These views use the **UNION ALL** operation to seamlessly combine identical tables, providing a single, unified dataset fast/wide analysis without duplicating the underlying operational data.
 
 ---
