@@ -1,7 +1,7 @@
 # Plantation-PostGIS-Geodatabase
 <p align=justify>
 This repository documents the development of an enterprise geodatabase for managing 12 oil palm estates (~50,000 ha total) located in Sarawak (Miri and Bintulu regions).
-The project was built in **PostgresSQL/PostGIS**, following standardized naming conventions, schema design, and controlled access for collaborative GIS workflows.
+The project was built in PostgreSQL/PostGIS, following standardized naming conventions, schema design, and controlled access for collaborative GIS workflows.
 </p>
 
 As an aspiring Geodata Engineer, this project demonstrates my practical learning in spatial database modeling, ETL pipeline design, and implementing data governance within PostGIS.
@@ -144,9 +144,9 @@ General Rules
 ## Problem Statement
 ### Why This Geodatabase Was Developed
 Previously, spatial data for estate management has traditionally been handled using **GeoPackage (.gpkg)** files e.g.-division.gpkg, section.gpkg.
-Each .gpkg file contained consolidated spatial layers for every estate, a convienient "plug-and-play" solution that we could copy and use in QGIS.
+Each .gpkg file contained consolidated spatial layers for every estate, a convenient "plug-and-play" solution that we could copy and use in QGIS.
 
-While this approach worked for quick map production, it introduced several isues over time:
+While this approach worked for quick map production, it introduced several issues over time:
 
 1. **🧩Lack of attribute standardization**:
 
@@ -164,7 +164,7 @@ While this approach worked for quick map production, it introduced several isues
 
    Everyone could edit any dataset, which  increased the risk of accidental data loss or overwrite.
 
-To modernize this workflow, this project introduces a **Postgres/PostGIS Extension enabled enterprise geodatabase** - a centralized, scalable, and version-controlled system that ensures:
+To modernize this workflow, this project introduces a **Postgres/PostGIS extension enabled enterprise geodatabase** - a centralized, scalable, and version-controlled system that ensures:
 
 * One **authoritative data source** for all 12 estates.
 * Standardized attribute schema and SRID across all layers.
