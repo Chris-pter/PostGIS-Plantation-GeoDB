@@ -109,6 +109,16 @@ This project applies a geospatial ETL pipeline to migrate raw estate mapping dat
 * Standardize field names (snake_case) and data types.
 * Normalize SRID to **EPSG:32650/32649**.
 * Validate geometry integrity and remove non-standard columns.
+* Attribute standardization via QGIS Field Calculator: Use QGIS to enforce relational integrity, such as assigning parent ID's (section_id in the block layer) based on spatial relationships. For instance, calculate "section_id" using conditional logic to match blocks     to their parent sections:
+  ```
+  CASE
+      WHEN "section_id"=1 THEN 1
+      WHEN "section_id"=2 THEN 2
+     --Additional condistion as needed-- 
+    ELSE NULL
+  END
+  ```
+  - This ensures hierarchical links are correctly set before ingestion, preventing orphaned records and maintaining the 1:N relationships in the schema.
 
 **Load**
 * Ingest cleaned layers into the respective estate schemas via QGIS *Export to PostgreSQL*.
