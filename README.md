@@ -1,4 +1,4 @@
-# Plantation-PostGIS-Geodatabase
+# PostGIS-Plantation GeoDB
 <p align=justify>
 This repository documents the development of an enterprise geodatabase for managing 12 oil palm estates (~50,000 ha total) located in Sarawak (Miri and Bintulu regions).
 The project was built in PostgreSQL/PostGIS, following standardized naming conventions, schema design, and controlled access for collaborative GIS workflows.
