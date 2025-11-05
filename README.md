@@ -117,7 +117,7 @@ This project applies a geospatial ETL pipeline to migrate raw estate mapping dat
 This ETL framework ensures consistent structure, spatial integrity, and Single Source of Truth (SSOT) across all 12 estates.
 
 ---
-
+### QGIS Ingestion 
 <details>
 <summary>Click to Expand: QGIS Pre-Ingestion Rules</summary>
 Before importing data into PostGIS, the following standardization steps were applied:
