@@ -15,20 +15,20 @@ Each estate schema contains four core spatial layers:
 - `section` - subdivision under each division 
 - `block` - smallest management unit (field/planting area)
 
-* **Master Schema**: master- consolidate data from all estate schemas for regional analysis
+* **Master Schema**: master - consolidate data from all estate schemas for regional analysis
 
 Additional datasets (e.g., `palm_stand`, `road`, `building`) will be ingested progressively.
 
 ## 🛠️ Tools & Technology Used
-* **PostgreSQL 16.4 + PostGIS 3**- Spatial database engine
+* **PostgreSQL 16.4 + PostGIS 3** - Spatial database engine
 *  **QGIS 3.44.3** - visualization, data transformation and data ingestion
 *  **pgAdmin 4** - Database management GUI
 *  **Draw.io** - ERD design & schema sketching
 *  **GitHub** - project documentation
 
-##Geodatabase Design & Modeling
+## ⚙️ Geodatabase Design & Modeling
 
-### ⚙️ Hierarchical Plantation Schema
+### Hierarchical Plantation Schema
 <p align=center>
 <img src='/docs/ERD Geodatabase.jpg' width=600>
 </p>
