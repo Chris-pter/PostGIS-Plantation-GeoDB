@@ -117,30 +117,6 @@ This project applies a geospatial ETL pipeline to migrate raw estate mapping dat
 This ETL framework ensures consistent structure, spatial integrity, and Single Source of Truth (SSOT) across all 12 estates.
 
 ---
-### QGIS Ingestion 
-<details>
-<summary>Click to Expand: QGIS Pre-Ingestion Rules</summary>
-Before importing data into PostGIS, the following standardization steps were applied:
-
-1. **Field naming convention**  
-   - Lowercase letters, underscores for separation (e.g., `section_no`, `area_ha`).  
-   - Field names consistent across estates.
-
-2. **Data type alignment**  
-   - Ensured each field has the same type across all estates (text, numeric, integer).  
-   - Removed extra or estate-specific columns.
-
-3. **Coordinate reference system**  
-   - All data projected to **EPSG:32650 (WGS 84 / UTM Zone 50N) / EPSG:32649 (WGS 84 / UTM Zone 49N)**.
-</details>
-
-
-### Naming Conventions
-General Rules
-* Use **snake_case** (lowercase, underscores).
-* Avoid spaces, uppercase letters, or special characters.
-* Keep names short, clear, and descriptive
-
 ## Problem Statement
 ### Why This Geodatabase Was Developed
 Previously, spatial data for estate management has traditionally been handled using **GeoPackage (.gpkg)** files e.g.-division.gpkg, section.gpkg.
