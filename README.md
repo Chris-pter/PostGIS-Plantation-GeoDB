@@ -78,6 +78,16 @@ estate_db
     └── other analytical views
 ```
 
+### Schema Design Summary Table
+The table below provides a structured overview of the core spatial layers within each schema. Each layer represents a hierarchical administrative level in the plantation, with clearly defined geometry types, primary keys, and foreign key relationships to enforce data integrity across the estate hierarchy. Spatial reference systems are standardized to **EPSG: 32650** or **EPSG: 32649**, depending on the estate's regional location, ensuring spatial consistency and seamless integration across all estates through master schema views.
+| Table Name | Geometry Type | Primary Key | Foreign Key | SRID | Description |
+|-------------|----------------|--------------|--------------|-------|--------------|
+| `boundary` | Polygon | `estate_id` | — | 32650/32649 | Overall estate boundary |
+| `division` | Polygon | `division_id` | `estate_id` | 32650/32649 | Administrative division |
+| `section` | Polygon | `section_id` | `division_id` | 32650/32649 | Subdivision under a division |
+| `block` | Polygon | `block_id` | `section_id` | 32650/32649 | Smallest management unit |
+
+
 ### Data Management Design
 OLTP & OLAP Use:
 * OLTP (Operational): These 12 schemas function as the **Online Transaction Processing** environment. They hold definitive, authoritative data for each estate, enabling local edits, updates, and version control.
