@@ -6,7 +6,7 @@ The project was built in PostgreSQL/PostGIS, following standardized naming conve
 
 As an aspiring Geodata Engineer, this project demonstrates my practical learning in spatial database modeling, ETL pipeline design, and implementing data governance within PostGIS.
 
-## Project Structure Overview
+## 📌 Project Structure Overview
 
 The company manages **12 estates** each represented as a **separate schema** within central database called (`estate_db`).
 Each estate schema contains four core spatial layers:
@@ -19,16 +19,16 @@ Each estate schema contains four core spatial layers:
 
 Additional datasets (e.g., `palm_stand`, `road`, `building`) will be ingested progressively.
 
-## Tools & Technology Used
+## 🛠️ Tools & Technology Used
 * **PostgreSQL 16.4 + PostGIS 3**- Spatial database engine
 *  **QGIS 3.44.3** - visualization, data transformation and data ingestion
 *  **pgAdmin 4** - Database management GUI
 *  **Draw.io** - ERD design & schema sketching
 *  **GitHub** - project documentation
 
-## Geodatabase Design & Modeling
+##Geodatabase Design & Modeling
 
-### Hierarchical Plantation Schema
+### ⚙️ Hierarchical Plantation Schema
 <p align=center>
 <img src='/docs/ERD Geodatabase.jpg' width=600>
 </p>
@@ -36,7 +36,7 @@ Additional datasets (e.g., `palm_stand`, `road`, `building`) will be ingested pr
 **Description:** This model enforces a strictly hierarchical structure, following the plantation's administrative organization (Boundary, Division, Section, Block).
 One-to-many (1:N) Foreign key constraints are used to link lower-level units to their unique parent, ensuring high data integrity (normalization) for core administrative layers.
 
-#### Entity Relationships
+### Entity Relationships
 ```
 boundary (1) ──< division (many)
 division (1) ──< section (many)
@@ -56,7 +56,7 @@ These views use the **UNION ALL** operation to seamlessly combine identical tabl
 
 ---
 
-## Database Architecture & Schema Structure
+## 🏗️ Database Architecture & Schema Structure
 
 The database is implemented using a multi-schema, two-tier architecture to achieve strict separation between operational data integrity and centralized analytical reporting. The central database (`estate_db`) is
 logically divided into 13 schemas: 12 individual estate schemas for daily operations and one dedicated master schema for wide analysis/fast map production.
@@ -103,7 +103,7 @@ OLTP & OLAP Use:
     ```
 ---
 
-## Data Ingestion Workflow
+## 🔧 Data Ingestion Workflow
 
 <p align=center>
 <img src='/docs/Data Ingestion Workflow.jpg' width="900">
@@ -137,7 +137,7 @@ This project applies a geospatial ETL pipeline to migrate raw estate mapping dat
 This ETL framework ensures consistent structure, spatial integrity, and Single Source of Truth (SSOT) across all 12 estates.
 
 ---
-## Problem Statement
+## ⚠️ Problem Statement
 ### Why This Geodatabase Was Developed
 Previously, spatial data for estate management has traditionally been handled using **GeoPackage (.gpkg)** files e.g., division.gpkg, section.gpkg.
 Each .gpkg file contained consolidated spatial layers for every estate, a convenient "plug-and-play" solution that we could copy and use in QGIS.
@@ -169,7 +169,7 @@ To modernize this workflow, this project introduces a **PostgreSQL/PostGIS exten
 
 Shifting from manual, file-based data handling towards a modern, spatially enabled data management system designed for accuracy, collaboration, and long-term usability
 
-## Lessons Learned
+## ✅ Lessons Learned
 
 * Migrating from GeoPackage to PostGIS improved data integrity and collaboration.
 * Consistent SRID, schema naming, and geometry type reduce integration errors.
