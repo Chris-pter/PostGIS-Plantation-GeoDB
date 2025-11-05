@@ -10,21 +10,21 @@ As an aspiring Geodata Engineer, this project demonstrates my practical learning
 
 The company manages **12 estates** each represented as a **separate schema** within central database called (`estate_db`).
 Each estate schema contains four core spatial layers:
-- `boundary` -overall estate boundary
-- `division` -administrative division within estate
-- `section` -subdivision under each division 
-- `block` -smallest management unit (field/planting area)
+- `boundary` - overall estate boundary
+- `division` - administrative division within estate
+- `section` - subdivision under each division 
+- `block` - smallest management unit (field/planting area)
 
-* **Master Schema**: master-consolidate data from all estate schemas for regional analysis
+* **Master Schema**: master- consolidate data from all estate schemas for regional analysis
 
-Additional datasets (e.g., `palm_stand`, `road`, `building`) will be ingested progressively
+Additional datasets (e.g., `palm_stand`, `road`, `building`) will be ingested progressively.
 
 ## Tools & Technology Used
 * **PostgreSQL 16.4 + PostGIS 3**- Spatial database engine
-*  **QGIS 3.44.3** -visualization, data transformation and data ingestion
-*  **pgAdmin 4** -Database management GUI
-*  **Draw.io** -ERD design & schema sketching
-*  **GitHub** -project documentation
+*  **QGIS 3.44.3** - visualization, data transformation and data ingestion
+*  **pgAdmin 4** - Database management GUI
+*  **Draw.io** - ERD design & schema sketching
+*  **GitHub** - project documentation
 
 ## Geodatabase Design & Modeling
 
@@ -52,13 +52,13 @@ block    (1) ──< palm_stand (many) [planned]
 </p>
 
 **Description:** This model illustrates the consolidation model used for wide reporting. The central master schema aggregates data from all 12 operational estates schemas using read-only **SQL View***.
-These views uses the **UNION ALL** operation to seamlessly combine identical tables, providing a single, unified dataset fast/wide analysis without duplicating the underlying operational data.
+These views use the **UNION ALL** operation to seamlessly combine identical tables, providing a single, unified dataset fast/wide analysis without duplicating the underlying operational data.
 
 ---
 
 ## Database Architecture & Schema Structure
 
-The database is implemented using a multi-schema, two tier architecture to achieve strict separation between operational data integrity and centralized analytical reporting. The central database (`estate_db`) is
+The database is implemented using a multi-schema, two-tier architecture to achieve strict separation between operational data integrity and centralized analytical reporting. The central database (`estate_db`) is
 logically divided into 13 schemas: 12 individual estate schemas for daily operations and one dedicated master schema for wide analysis/fast map production.
 
 
@@ -84,7 +84,7 @@ OLTP & OLAP Use:
 * OLAP (Analytical): This central schema serves as the **Online Analytical Processing** environment. It contains no physical tables of its own, relying instead on read-only **SQL Views** that aggregate data from all
   12 operational schemas. This provides a single, secure source for multi-estate reporting and spatial analysis.
 
-  e.g.,-Query the total planting area of the entire estates instantly and accurately, without opening 12 files.
+  e.g., Query the total planting area of the entire estates instantly and accurately, without opening 12 files.
   ```
   Reporting/Aggregation
           SELECT SUM(ST_AREA(geom)/10000) AS
@@ -112,14 +112,14 @@ This project applies a geospatial ETL pipeline to migrate raw estate mapping dat
 
 **Load**
 * Ingest cleaned layers into the respective estate schemas via QGIS *Export to PostgreSQL*.
-* Master schema then generates **SQL View** for cross-estate reporting.
+* Master schema then generates **SQL Views** for cross-estate reporting.
 
 This ETL framework ensures consistent structure, spatial integrity, and Single Source of Truth (SSOT) across all 12 estates.
 
 ---
 ## Problem Statement
 ### Why This Geodatabase Was Developed
-Previously, spatial data for estate management has traditionally been handled using **GeoPackage (.gpkg)** files e.g.-division.gpkg, section.gpkg.
+Previously, spatial data for estate management has traditionally been handled using **GeoPackage (.gpkg)** files e.g., division.gpkg, section.gpkg.
 Each .gpkg file contained consolidated spatial layers for every estate, a convenient "plug-and-play" solution that we could copy and use in QGIS.
 
 While this approach worked for quick map production, it introduced several issues over time:
@@ -140,16 +140,16 @@ While this approach worked for quick map production, it introduced several issue
 
    Everyone could edit any dataset, which  increased the risk of accidental data loss or overwrite.
 
-To modernize this workflow, this project introduces a **Postgres/PostGIS extension enabled enterprise geodatabase** - a centralized, scalable, and version-controlled system that ensures:
+To modernize this workflow, this project introduces a **PostgresSQL/PostGIS extension enabled enterprise geodatabase** - a centralized, scalable, and version-controlled system that ensures:
 
 * One **authoritative data source** for all 12 estates.
 * Standardized attribute schema and SRID across all layers.
 * Role-based access control, separating editors from viewers.
-* Integration-ready sturcture for advanced analysis and GIS connectivity.
+* Integration-ready structure for advanced analysis and GIS connectivity.
 
--Shifting from manual, file-based data handling towards a modern, spatially enabled data management system. Designed for accuracy, collaboration, and long-term usability
+Shifting from manual, file-based data handling towards a modern, spatially enabled data management system. Designed for accuracy, collaboration, and long-term usability
 
-## Lesson Learned
+## Lessons Learned
 
 * Migrating from GeoPackage to PostGIS improved data integrity and collaboration.
 * Consistent SRID, schema naming, and geometry type reduce integration errors.
