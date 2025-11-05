@@ -109,12 +109,12 @@ This project applies a geospatial ETL pipeline to migrate raw estate mapping dat
 * Standardize field names (snake_case) and data types.
 * Normalize SRID to **EPSG:32650/32649**.
 * Validate geometry integrity and remove non-standard columns.
-* Attribute standardization via QGIS Field Calculator: Use QGIS to enforce relational integrity, such as assigning parent ID's (section_id in the block layer) based on spatial relationships. For instance, calculate "section_id" using conditional logic to match blocks     to their parent sections:
+* Attribute standardization via QGIS Field Calculator: Use QGIS to enforce relational integrity, such as assigning parent IDs (section_id in the block layer) based on spatial relationships. For instance, calculate "section_id" using conditional logic to match blocks     to their parent sections:
   ```
   CASE
-      WHEN "section_id"=1 THEN 1
-      WHEN "section_id"=2 THEN 2
-     --Additional condistion as needed-- 
+      WHEN "section_id" = 1 THEN 1
+      WHEN "section_id" = 2 THEN 2
+     --Additional condition as needed-- 
     ELSE NULL
   END
   ```
@@ -150,14 +150,14 @@ While this approach worked for quick map production, it introduced several issue
 
    Everyone could edit any dataset, which  increased the risk of accidental data loss or overwrite.
 
-To modernize this workflow, this project introduces a **PostgresSQL/PostGIS extension enabled enterprise geodatabase** - a centralized, scalable, and version-controlled system that ensures:
+To modernize this workflow, this project introduces a **PostgreSQL/PostGIS extension enabled enterprise geodatabase** - a centralized, scalable, and version-controlled system that ensures:
 
 * One **authoritative data source** for all 12 estates.
 * Standardized attribute schema and SRID across all layers.
 * Role-based access control, separating editors from viewers.
 * Integration-ready structure for advanced analysis and GIS connectivity.
 
-Shifting from manual, file-based data handling towards a modern, spatially enabled data management system. Designed for accuracy, collaboration, and long-term usability
+Shifting from manual, file-based data handling towards a modern, spatially enabled data management system designed for accuracy, collaboration, and long-term usability
 
 ## Lessons Learned
 
