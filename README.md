@@ -177,7 +177,11 @@ Shifting from manual, file-based data handling towards a modern, spatially enabl
 * Separating OLTP (operational) and OLAP (analytical) schemas supports scalable spatial analysis.
 * Establishing a Single Source of Truth (SSOT) ensures reliable, unified geospatial data for decision-making.
 
+## Related Project: Drone Flight Plan Database [gis_flightplan_db]
+To further streamline operations and leverage the new database architecture, a related project was initiated to manage drone flight planning assets efficiently. This project directly addresses the manual, repetative process of generating buffered vector data for drone pilots.
 
+**Project Goal:** Establish a centralized repository for standardized flight planning resources, allowing drone pilots and GIS team to retrieve current and historical buffered flight sections instanly without manual processing. This eliminates duplicated effort and ensures all flight data is based in the single, authoritative geometry (SSOT).
+**Result:** Drone pilots can instantly pull the correct .gpkg, easily convert it to **KML/KMZ** fortmat, and upload it for immediate mission execution on DJI drone remotes.
 
 
 
