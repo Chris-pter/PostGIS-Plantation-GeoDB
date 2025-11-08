@@ -9,21 +9,22 @@ As an aspiring Geodata Engineer, this project demonstrates my practical learning
 ## 📌 Project Structure Overview
 
 The company manages **12 estates** each represented as a **separate schema** within central database called (`estate_db`).
-This repository demonstrates how these core plantation layers can be structured into a unified relational geodatabase
-- `boundary` - overall estate boundary
-- `division` - administrative division within estate
-- `section` - subdivision under each division 
-- `block` - smallest management unit (field/planting area)
+Oil palm plantation contain multiple hierarchical spatial layer (boundary → division → section → block). Traditionally these layers are stored as separate GeoPackage (.gpkg) files, standalone folders in a shared server files.
 
-* **Master Schema**: master - consolidate data from all estate schemas for regional analysis
+This repository demonstrates how these core plantation layers can be structured into a unified relational geodatabase using PostGIS. This enables:
+
+- controlled foreign key relationship.
+- consistent spatial reference.
+- cross-estate integration.
+- easier reporting & analysis.
 
 Additional datasets (e.g., `palm_stand`, `road`, `building`) will be ingested progressively.
 
 ## 🛠️ Tools & Technology Used
 * **[PostgreSQL 16.4 + PostGIS 3](https://www.postgresql.org/)** - Spatial database engine
-*  **QGIS 3.44.3** - visualization, data transformation and data ingestion
-*  **pgAdmin 4** - Database management GUI
-*  **Draw.io** - ERD design & schema sketching
+*  **[QGIS 3.44.3](https://qgis.org/download/)** - visualization, data transformation and data ingestion
+*  **[pgAdmin 4](https://www.postgresql.org/)** - Database management GUI
+*  **[Draw.io](https://www.drawio.com/)** - ERD design & schema sketching
 *  **GitHub** - project documentation
 
 ## ⚙️ Geodatabase Design & Modeling
