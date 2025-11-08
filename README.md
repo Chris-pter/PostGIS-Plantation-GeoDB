@@ -9,7 +9,7 @@ As an aspiring Geodata Engineer, this project demonstrates my practical learning
 ## 📌 Project Structure Overview
 
 The company manages **12 estates** each represented as a **separate schema** within central database called (`estate_db`).
-Each estate schema contains four core spatial layers:
+This repository demonstrates how these core plantation layers can be structured into a unified relational geodatabase
 - `boundary` - overall estate boundary
 - `division` - administrative division within estate
 - `section` - subdivision under each division 
