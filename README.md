@@ -32,6 +32,7 @@ This project follows a simple PostGIS setup flow: create database → enable Pos
 
 To keep this README short, the full detailed explanation is moved to a separate page.
 Refer to: [sequence workflow.md](docs/sequence workflow.md) for full breakdown of each step.
+
 ## ⚙️ Geodatabase Design & Modeling
 
 ### Hierarchical Plantation Schema
