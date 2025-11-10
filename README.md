@@ -4,7 +4,7 @@ This repository documents the development of an enterprise geodatabase for manag
 The project was built in PostgreSQL/PostGIS, following standardized naming conventions, schema design, and controlled access for collaborative GIS workflows.
 </p>
 
-As an aspiring Geodata Engineer, this project demonstrates my practical learning in spatial database modeling, ETL pipeline design, and implementing data governance within PostGIS.
+As an aspiring Geodata Engineer, this project demonstrates my practical learning in spatial database development/modeling, ETL pipeline design, and implementing data governance within PostGIS.
 
 ## 📌 Project Structure Overview
 
