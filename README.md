@@ -31,7 +31,7 @@ Additional datasets (e.g., `palm_stand`, `road`, `building`) will be ingested pr
 This project follows a simple PostGIS setup flow: create database → enable PostGIS → create schemas → create spatial tables → load data → index geometry → connect to GIS tools.
 
 To keep this README short, the full detailed explanation is moved to a separate page.
-Refer to: [sequence workflow.md](docs/sequence workflow.md) for full breakdown of each step.
+Refer to: [sequence workflok](docs/sequence workflow.md) for full breakdown of each step.
 
 ## ⚙️ Geodatabase Design & Modeling
 
