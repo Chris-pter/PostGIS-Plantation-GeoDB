@@ -38,7 +38,7 @@ Refer to: [sequence workflow](docs/sequence_workflow.md)
 
 ### Hierarchical Plantation Schema
 <p align=center>
-<img src='/docs/ERD Geodatabase.jpg' width=600>
+<img src='/docs/erd_geodatabase.jpg' width=600>
 </p>
 
 **Description:** This model enforces a strictly hierarchical structure, following the plantation's administrative organization (Boundary, Division, Section, Block).
@@ -114,7 +114,7 @@ OLTP & OLAP Use:
 ## 🔧 Data Ingestion Workflow
 
 <p align=center>
-<img src='/docs/Data Ingestion Workflow.jpg' width="900">
+<img src='/docs/data_ingestion_workflow.jpg' width="900">
 </p>
 
 ### ETL Workflow
