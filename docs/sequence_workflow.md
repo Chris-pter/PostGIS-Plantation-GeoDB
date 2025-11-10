@@ -16,7 +16,7 @@
     ```
   - At this point you have a spatially enabled database.
 
-### 3.Create schema(s) and set up roles/users
+### 3. Create schema(s) and set up roles/users
   - Decide on a schema structure (e.g., public, infrastructure, plantation. etc).
   - Create roles/users who will load data or who will query the data.
   - Assign privileges to protect and control data access.
