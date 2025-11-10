@@ -137,6 +137,7 @@ This project applies a geospatial ETL pipeline to migrate raw estate mapping dat
   END
   ```
   - This ensures hierarchical links are correctly set before ingestion, preventing orphaned records and maintaining the 1:N relationships in the schema.
+  - Please consult the dedicated documentation: **[QGIS Attribute Standardization](docs/attribute_standardization.md)**
 
 **Load**
 * Ingest cleaned layers into the respective estate schemas via QGIS *Export to PostgreSQL*.
