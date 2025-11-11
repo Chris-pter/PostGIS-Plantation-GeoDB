@@ -1,4 +1,4 @@
-## Layer Hierarchy & Design Rationale
+## 📋Layer Hierarchy & Design Rationale
 ### Overview
 This document explains the hierarchical design of the spatial data model used in this geodatabase. The hierarchy consists of 4 core layers: **Boundary**, **Division**, **Section**, and **Block**. Each level represents a
 discrete administrative or operational unit, designed to provide a scalable structure for managing spatial assets, supporting analysis, and ensuring data integrity across operational areas.
