@@ -51,7 +51,7 @@ FROM (
       -- 🟢 Add more estates below as needed:
     -- UNION ALL
     -- SELECT
-    --     'Baram_Estate'::text AS estate_label,
+    --     'Estate_3'::text AS estate_label,
     --     f.estate_name,
     --     f.section_number,
     --     f.area_ha,
