@@ -12,7 +12,7 @@ The top-level unit in the hierarchy, representing a high-level operational area.
 The boundary layer defines the overal spatial extent for downstream units and ensures all sub-units area contained within a single reference geometry.
 
 #### - Division
-Subsets of the boundary layer, this layer representing intermediate operational segments. Division facilitate management and analysis as ta finer scale than the full boundary while maintaining alignment with top-level constraints.
+Subsets of the boundary layer, this layer representing intermediate operational segments. Division facilitate management and analysis at a finer scale than the full boundary while maintaining alignment with top-level constraints.
 This division layer help organize spatial assets and allow grouping of multiple section layers.
 
 #### - Section
