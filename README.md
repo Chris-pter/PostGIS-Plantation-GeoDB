@@ -106,7 +106,7 @@ The table below provides a structured overview of the core spatial layers within
 | `section` | Polygon | `section_id` | `division_id` | 32650/32649 | Subdivision under a division |
 | `block` | Polygon | `block_id` | `section_id` | 32650/32649 | Smallest management unit |
 
-See [Layer Hierarchy and Design Rationale](docs/layer_hierarchy_and_design_rationale.md) for a detailed explanation of how boundary, division, section and block layers are structured and how they support data integrity and ETL workflows.
+➡️ See [Layer Hierarchy and Design Rationale](docs/layer_hierarchy_and_design_rationale.md) for a detailed explanation of how boundary, division, section and block layers are structured and how they support data integrity and ETL workflows.
 
 ### Data Management Design
 OLTP & OLAP Use:
