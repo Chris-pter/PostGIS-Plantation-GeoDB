@@ -1,6 +1,6 @@
 ## 🌳Attribute Standardization Deep Dive
 This document details the mandatory attribute standardization applied to the four core hierarchical spatial layers: `boundary`, `division`, `section`, `block`, during the ETL process.
-This standardization ensures data integrity, query consistency, and compliance with established enterprise conventions.
+These standards ensures data integrity, query consistency, and aligmnent with established enterprise conventions.
 
 ### The core principles applied were:
 1. **Naming Convention:** All column names are converted to *snake_case*.
@@ -8,6 +8,7 @@ This standardization ensures data integrity, query consistency, and compliance w
 3. **Spatial Reference:** All geometries are reprojected to the designated SRID for the specific estate (EPSG: 32650 or EPSG: 32649).
 
 ## Standardization by Layer
+- Each layer follows a consistent attribute schema and maintains referential integrity through primary and foreign key relationships.
 
 ## 1. Boundary Layer
 
@@ -48,4 +49,5 @@ This standardization ensures data integrity, query consistency, and compliance w
 | `geom` | Polygon | Standardized SRID (EPSG: 32650/32649). |
 
 ## Summary
-This documentation details the rigorous attribute standardization applied to the four core hierarchical spatial layers (boundary, division, section, block) migrating from file-based data like (GeoPackages) into the PostGIS database.
+This standardization framework enforces consistent naming, spatial reference, and data types across all hierarchical layers, ensuring integrity and interoperability within the enterprise geodatabase.
+
