@@ -62,6 +62,10 @@ block    (1) ──< palm_stand (many) [planned]
 **Description:** This model illustrates the consolidation model used for wide reporting. The central master schema aggregates data from all 12 operational estates schemas using read-only **SQL Views**.
 These views use the **UNION ALL** operation to seamlessly combine identical tables, providing a single, unified dataset fast/wide analysis without duplicating the underlying operational data.
 
+### Master Views
+The defined views, which are essential for the application's reporting and data access layer, are located here:
+* [Master Views SQL](sql/views/estate_summary.sql)
+
 ---
 
 ## 🏗️ Database Architecture & Schema Structure
