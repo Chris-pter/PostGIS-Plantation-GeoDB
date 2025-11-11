@@ -1,4 +1,4 @@
-## **Sequence of Operations**
+## 📚 **Sequence of Operations**
 
 ### 1. Install PostgreSQL + PostGIS
   - Install PostgreSQL on your server/PC or workstation.
