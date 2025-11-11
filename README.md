@@ -27,14 +27,14 @@ Additional datasets (e.g., `palm_stand`, `road`, `building`) will be ingested pr
 *  **[Draw.io](https://www.drawio.com/)** - ERD design & schema sketching
 *  **GitHub** - project documentation
 
-## Database Initialization
+## 🧩 Database Initialization
 To prepare the PostGIS database, you must run the scripts located in the `sql/init/` directory in the following sequence:
 1. [Create Database](sql/init/00_create_db.sql): Sets up the initial database environment.
 2. [Enable PostGIS Extension](sql/init/01_enable_postgis.sql): Enables the PostGIS extension.
 3. [Create Schemas](sql/init/02_create_schema.sql): Defines the logical structure and namespace for your tables and objects.
 4. [Create Roles](sql/init/03_user_roles_privileges.sql): Establishes user roles and assigns neccessary access permission.
 
-## Sequence Workflow
+## 🔗 Sequence Workflow
 This project follows a simple PostGIS setup flow: create database → enable PostGIS → create schemas → create spatial tables → load data → connect to GIS tools.
 
 To keep this README short, the full detailed explanation is moved to a separate page.
