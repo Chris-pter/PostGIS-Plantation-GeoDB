@@ -1,4 +1,4 @@
-## Attribute Standardization Deep Dive
+## 🌳Attribute Standardization Deep Dive
 This document details the mandatory attribute standardization applied to the four core hierarchical spatial layers: `boundary`, `division`, `section`, `block`, during the ETL process.
 This standardization ensures data integrity, query consistency, and compliance with established enterprise conventions.
 
