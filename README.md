@@ -1,12 +1,16 @@
 # PostGIS-Plantation GeoDB
 <p align=justify>
-This repository documents the development of an enterprise geodatabase for managing 12 oil palm estates (~52,000 ha total) located in Sarawak (Miri and Bintulu regions).
-The project was built in PostgreSQL/PostGIS, following standardized naming conventions, schema design, and controlled access for collaborative GIS workflows.
+A centralized PostGIS geodatabase designed and implemented to manage hierarchical plantation spatial data across multiple estates.
+ This work showcases enterprise-level geospatial data modeling, attribute standardization, and ETL design, reflecting a transition from a traditional GIS workflows to modern geodata engineering practices.
 </p>
 
 As an aspiring Geodata Engineer, this project demonstrates my practical learning in spatial database development/modeling, ETL pipeline design, and implementing data governance within PostGIS.
 
 ## 📌 Project Structure Overview
+
+This repository documents the development of an enterprise geodatabase for managing **12 oil palm estates** **(~52,000 ha total)** located in Sarawak (Miri and Bintulu regions).
+The project was built in PostgreSQL/PostGIS, following standardized naming conventions, schema design, and controlled access for collaborative GIS workflows.
+
 
 The company manages **12 estates** each represented as a **separate schema** within central database called (`estate_db`).
 Oil palm plantation contain multiple hierarchical spatial layer (boundary → division → section → block). Traditionally these layers are stored as separate GeoPackage (.gpkg) files, standalone folders in a shared server files.
