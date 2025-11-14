@@ -2,7 +2,7 @@
 This document provides a simple and practical SQL queries for retrieving and reporting essential information from the centralized PostGIS geodatabase, specifically focusing on the *'block'* layer.
 
 ### Raw Sample Data
-For a direct, downloadable sample of the non-spatial attribute data used this example, please refer to the included .csv file: **[example_block](/docs)**
+For a direct, downloadable sample of the non-spatial attribute data used this example, please refer to the included .csv file: **[example_block](example_blocks.csv)**
 
 ## Practical Data Retrieving
 
