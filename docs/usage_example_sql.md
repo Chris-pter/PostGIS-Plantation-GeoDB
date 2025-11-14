@@ -121,7 +121,7 @@ FROM
 
 3. Estate Area Snapshot Query
 - This is a simple audit report to quickly verify the total area and block count contributed by each estate in the company.
-- 
+
 **Area Audit** | This query groups total area by the estate_name and used to track the area of each estates's total reported area over time.
 ```sql
 SELECT
