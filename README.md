@@ -207,7 +207,37 @@ Shifting from manual, file-based data handling towards a modern, spatially enabl
 * Separating OLTP (operational) and OLAP (analytical) schemas supports scalable spatial analysis.
 * Establishing a Single Source of Truth (SSOT) ensures reliable, unified geospatial data for decision-making.
 
-## Related Project: Drone Flight Plan Database [gis_flightplan_db]
+## 🤝 Contribution Guidlines
+Contributions are welcome and highly appreciated.
+This repo is an evolving PostGIS-based plantation geodatabase template, and community feedback plays an important role in ferining its structure and performance.
+
+You can contribute in several ways:
+
+- Suggest improvements to the schema design or relationships.
+- Propose indexing or query optimization strategies.
+- Share ideas for geospatial ETL/automation workflows.
+- Enhance documentation or report issues/data integrity concerns.
+
+To contribute:
+1. Open an Issue to start a discussion.
+2. Submit a Pull Request with clear explanations.
+3. Follow the existing folder structure and naming conventions.
+4. Ensure SQL or documentation updates are consistent and modular.
+
+All contributions that help strengthen the geodatabase/geodata engineering workflow are welcome
+
+## 🔧 Current Limitations & Future Improvements
+To make sure this repository more robust, the following enhancements are planned:
+
+- Additional indexing strategies.
+- Automated SQL/python pipeline.
+- CI/CD workflow for data validation.
+- Improved ETL examples maybe using GDAL/advanced QGIS processing.
+- Documentation in incremental are welcome.
+
+Community suggestions are welcome.
+
+## 🚁 Related Project: Drone Flight Plan Database [gis_flightplan_db]
 To further streamline operations and leverage the new database architecture, a related project was initiated to manage drone flight planning assets efficiently. This project directly addresses the manual, repetative process of generating buffered vector data for drone pilots.
 
 **Project Goal:** Establish a centralized repository for standardized flight planning resources, allowing drone pilots and GIS team to retrieve current and historical buffered flight sections instanly without manual processing. This eliminates duplicated effort and ensures all flight data is based in the single, authoritative geometry (SSOT).
