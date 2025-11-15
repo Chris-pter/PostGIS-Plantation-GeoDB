@@ -77,6 +77,10 @@ These views use the **UNION ALL** operation to seamlessly combine identical tabl
 The defined views, which are essential for the application's reporting and data access layer, are located here:
 * [Master Views SQL](sql/views/estate_summary.sql)
 
+## 🚀 Usage Examples
+➡️ **Refer to the dedicated documentation for practical SQL usage examples**
+👉 **[Practical SQL Usage Examples](docs/usageexample_sql.md)**
+
 ---
 
 ## 🏗️ Database Architecture & Schema Structure
