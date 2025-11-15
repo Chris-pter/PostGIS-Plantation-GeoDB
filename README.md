@@ -79,7 +79,8 @@ The defined views, which are essential for the application's reporting and data 
 
 ## 🚀 Usage Examples
 ➡️ **Refer to the dedicated documentation for practical SQL usage examples**
-👉 **[Practical SQL Usage Examples](docs/usageexample_sql.md)**
+
+👉 **[Practical SQL Usage Examples](docs/usage_example_sql.md)**
 
 ---
 
