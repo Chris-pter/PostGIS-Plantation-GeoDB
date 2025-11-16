@@ -238,11 +238,11 @@ To make sure this repository more robust, the following enhancements are planned
 Community suggestions are welcome.
 
 ## 🚁 Related Project: Drone Flight Plan Database [gis_flightplan_db]
-To further streamline operations and leverage the new database architecture, a related project was initiated to manage drone flight planning assets efficiently. This project directly addresses the manual, repetative process of generating buffered vector data for drone pilots.
+A companion project to developed to streamline drone flight panning across estates.
 
-**Project Goal:** Establish a centralized repository for standardized flight planning resources, allowing drone pilots and GIS team to retrieve current and historical buffered flight sections instanly without manual processing. This eliminates duplicated effort and ensures all flight data is based in the single, authoritative geometry (SSOT).
+**Project Goal:** A centralized repository of standardized flight plan buffer datasets for piots and GIS staff.
 
-**Result:** Drone pilots can instantly pull the correct .gpkg, easily convert it to **KML/KMZ** fortmat, and upload it for immediate mission execution on DJI drone remotes.
+**Result:** Drone pilots can instantly retrieve the proper `.gpkg` , convert to KML/KMZ, and upload to to DJI remote controllers, removing manual and repetative task.
 
 
 
