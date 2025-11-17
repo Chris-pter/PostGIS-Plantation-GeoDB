@@ -1,4 +1,7 @@
 # PostGIS-Plantation GeoDB
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+![QGIS](https://img.shields.io/badge/QGIS-58AD60?style=for-the-badge&logo=qgis&logoColor=white)
+
 <p align=justify>
 A centralized PostGIS geodatabase designed and implemented to manage hierarchical plantation spatial data across multiple estates.
  This work showcases enterprise-level geospatial data modeling, attribute standardization, and ETL design, reflecting a transition from a traditional GIS workflows to modern geodata engineering practices.
