@@ -241,7 +241,7 @@ Community suggestions are welcome.
 ## 🚁 Related Project: Drone Flight Plan Database [gis_flightplan_db]
 A companion project to developed to streamline drone flight panning across estates.
 
-**Project Goal:** A centralized repository of standardized flight plan buffer datasets for piots and GIS staff.
+**Project Goal:** A centralized repository of standardized flight plan buffer datasets for drone pilots and GIS staff.
 
 **Result:** Drone pilots can instantly retrieve the proper `.gpkg` , convert to KML/KMZ, and upload to to DJI remote controllers, removing manual and repetative task.
 
