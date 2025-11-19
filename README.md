@@ -70,7 +70,7 @@ block    (1) ──< palm_stand (many) [planned]
 
 ### Cross-Estate Master View Architecture
 <p align=center>
-<img src='/docs/cross estate_master schema ERD.jpg' width="900">
+<img src='/docs/cross estate_master_schema_erd.jpg' width="900">
 </p>
 
 **Description:** This model illustrates the consolidation model used for wide reporting. The central master schema aggregates data from all 12 operational estates schemas using read-only **SQL Views**.
